@@ -1,14 +1,13 @@
 import './scss/App.scss';
 
-import SearchBar from './components/SearchBar';
+import Header from './components/Header';
+import CapitalsTemp from './components/CapitalsTemp';
 
 const App = () => {
   return (
     <>
-      <h1 className="title"> 
-        Previsão do tempo
-      </h1>
-      <SearchBar />
+      <Header />
+      <CapitalsTemp />
     </>
   );
 };
