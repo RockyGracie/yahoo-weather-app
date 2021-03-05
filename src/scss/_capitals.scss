@@ -12,13 +12,42 @@
 
    &__temp {
       font-size: 14px;
-      color: #322B1E;
+      color: $fontColor;
       margin-bottom: 16px;
    }
 
    &__capital {
       font-weight: 600;
-      color: #322B1E;
+      color: $fontColor;
       margin-bottom: 28px;
+   }
+}
+
+
+// MEDIA QUERIES
+
+@media (min-width: 400px) {
+   .capitals {
+
+      &__title { text-align: center }
+
+      &__grid {
+         margin: 0 auto;
+         width: 60%;
+      }
+   }
+}
+
+@media (min-width: 900px) {
+   .capitals {
+      padding: 0;
+
+      &__grid {
+         width: 50%;
+         
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+      }
    }
 }
