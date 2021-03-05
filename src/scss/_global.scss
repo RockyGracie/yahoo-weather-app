@@ -20,4 +20,9 @@
   color: $darkOrange;
 }
 
+@media (max-width: 799px) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
 

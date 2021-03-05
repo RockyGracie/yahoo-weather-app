@@ -38,12 +38,12 @@
    }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 799px) {
    .capitals {
       padding: 0;
 
       &__grid {
-         width: 50%;
+         width: 500px;
          
          display: flex;
          align-items: center;

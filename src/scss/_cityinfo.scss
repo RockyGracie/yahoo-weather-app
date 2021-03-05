@@ -1,6 +1,7 @@
 .cityinfo {
    color: $fontColor;
    font-weight: 600;
+
    
    &__title {
       font-size: 22px;
@@ -85,5 +86,28 @@
       > span { color: $darkOrange }
 
       & span:first-child { margin-right: 5px }
+   }
+}
+
+// MEDIA QUERIE
+@media (min-width: 500px) {
+   .cityinfo {
+      width: 80%;
+      margin: 0 auto;
+
+      &__title {
+         font-size: 30px;
+      }
+   }
+}
+
+@media (min-width: 799px) {
+   .cityinfo {
+      width: 600px;
+      
+         &__title {
+         font-size: 38px;
+         text-align: center;
+      }
    }
 }

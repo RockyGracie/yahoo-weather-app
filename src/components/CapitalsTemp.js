@@ -1,9 +1,8 @@
 const CapitalsTemp = () => {
    return (
-      <div className="capitals pdd-left">
+      <div className="capitals pdd-left"> 
             <h2 className="capitals__title">Capitais</h2>
          <div className="capitals__grid">
-
             <div className="capitals__items">
                <div className="capitals__temp">
                   <span>Min</span>
@@ -40,6 +39,11 @@ const CapitalsTemp = () => {
 
 
             <div className="capitals__items">
+               <div className="capitals__temp hide-for-mobile">
+                  <span>Min</span>
+                  <span>Máx</span>
+                  <span></span>
+               </div>
                <div className="capitals__capital">
                   <span>18º</span>
                   <span>27º</span>

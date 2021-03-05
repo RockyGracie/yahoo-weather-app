@@ -22,7 +22,12 @@ body {
 .icon {
   font-size: 22px;
   color: #FF7F00;
-  background: transparent;
+}
+
+@media (max-width: 799px) {
+  .hide-for-mobile {
+    display: none;
+  }
 }
 
 .title {
@@ -37,7 +42,7 @@ body {
 .form {
   text-align: center;
   width: 100%;
-  padding-bottom: 65px;
+  padding-bottom: 25px;
   border-bottom: 1px solid #fff;
   margin: 0 auto 20px;
 }
@@ -62,12 +67,12 @@ body {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 799px) {
   .form {
-    width: 50%;
+    width: 70%;
   }
   .form__input {
-    width: 400px;
+    width: 500px;
   }
 }
 
@@ -106,7 +111,7 @@ body {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 799px) {
   .capitals {
     padding: 0;
   }
@@ -152,6 +157,7 @@ body {
   position: absolute;
   top: 12px;
   right: 12px;
+  background: none;
   border: none;
   cursor: pointer;
 }
@@ -163,6 +169,41 @@ body {
 .cityinfo__city--temp {
   font-size: 48px;
   margin-bottom: 18px;
+}
+
+.cityinfo__city--grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.cityinfo__city--grid div:nth-of-type(1),
+.cityinfo__city--grid div:nth-of-type(2) {
+  margin-bottom: 10px;
+}
+
+.cityinfo__city--grid.min-max div:first-child {
+  margin-right: 10px;
+}
+
+.cityinfo__city--grid.min-max div i {
+  margin-right: 5px;
+}
+
+.cityinfo__city--grid span {
+  margin-right: 10px;
+}
+
+.cityinfo__city--grid span i {
+  margin-right: 5px;
+}
+
+.cityinfo__city--grid.grid-info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
 }
 
 .cityinfo__city--grid.grid-info span {
@@ -195,5 +236,25 @@ body {
 
 .cityinfo__temp span:first-child {
   margin-right: 5px;
+}
+
+@media (min-width: 500px) {
+  .cityinfo {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .cityinfo__title {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 799px) {
+  .cityinfo {
+    width: 600px;
+  }
+  .cityinfo__title {
+    font-size: 38px;
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=App.css.map */

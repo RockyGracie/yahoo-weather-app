@@ -69,6 +69,13 @@ const CityInfo = () => {
                      <span className="cityinfo__temp--max">35º</span>
                   </div>
                </div>
+               <div className="cityinfo__next--day hide-for-mobile">
+                  <div className="cityinfo__day">Sábado</div>
+                  <div className="cityinfo__temp">
+                     <span className="cityinfo__temp--min">23º</span>
+                     <span className="cityinfo__temp--max">35º</span>
+                  </div>
+               </div>
             </div>
          </div>
       </div>
