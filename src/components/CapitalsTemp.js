@@ -1,83 +1,82 @@
+import { useState } from 'react';
+
+import useSingleCity from './useSingleCity';
+import CapitalMobile from './CapitalMobile';
+import CapitalDeskLeft from './CapitalDeskLeft';
+import CapitalDeskRight from './CapitalDeskRight';
+import Spinner from './Spinner';
+
 const CapitalsTemp = () => {
+
+   const [isLoading, setIsLoading] = useState(true);
+
+   setTimeout(() => {
+      setIsLoading(false);
+   }, 5000);
+
+   const {  
+         rio, saoPaulo, beloHorizonte, brasilia, belem, 
+         salvador, curitiba, fortaleza, manaus, joaoPessoa 
+         } = useSingleCity();
+
+   const arrMobile = [
+               rio, saoPaulo, beloHorizonte, brasilia, belem, 
+               salvador, curitiba, fortaleza, manaus, joaoPessoa
+               ]
+
+   const arrDesktopLeft = [ rio, saoPaulo, beloHorizonte, brasilia, belem ];
+
+   const arrDesktopRight = [ salvador, curitiba, fortaleza, manaus, joaoPessoa ];
+
    return (
       <div className="capitals pdd-left"> 
             <h2 className="capitals__title">Capitais</h2>
-         <div className="capitals__grid">
-            <div className="capitals__items">
-               <div className="capitals__temp">
-                  <span>Min</span>
-                  <span>Máx</span>
-                  <span></span>
-               </div>
-               <div className="capitals__capital">
-                  <span>18º</span>
-                  <span>27º</span>
-                  <span>Rio de Janeiro</span>
-               </div>
-               <div className="capitals__capital">
-                  <span>18º</span>
-                  <span>27º</span>
-                  <span>São Paulo</span>
-               </div>
-
-               <div className="capitals__capital">
-                  <span>24º</span>
-                  <span>35º</span>
-                  <span>Belo Horizonte</span>
-               </div>
-               <div className="capitals__capital">
-                  <span>22º</span>
-                  <span>21º</span>
-                  <span>Brasília</span>
-               </div>
-               <div className="capitals__capital">
-                  <span>19º</span>
-                  <span>25º</span>
-                  <span>Belém</span>
+         {isLoading ? (
+            <Spinner />
+            ) : (
+            <>
+            <div className="capitals__grid" id="hide-for-desktop">
+               <div className="capitals__items">
+                  <div className="capitals__temp">
+                     <span>Min</span>
+                     <span>Máx</span>
+                     <span></span>
+                  </div>
+                  {arrMobile && arrMobile.map(city => (
+                     <CapitalMobile key={city.id} city={city} />
+                  ))}
                </div>
             </div>
-
-
-            <div className="capitals__items">
-               <div className="capitals__temp hide-for-mobile">
-                  <span>Min</span>
-                  <span>Máx</span>
-                  <span></span>
+            
+            <div className="capitals__grid" id="hide-for-mobile">
+               <div className="capitals__items">
+                  <div className="capitals__temp">
+                     <span>Min</span>
+                     <span>Máx</span>
+                     <span></span>
+                  </div>
+                  {arrDesktopLeft && arrDesktopLeft.map(city => (
+                     <CapitalDeskLeft key={city.id} city={city} />
+                  ))}
                </div>
-               <div className="capitals__capital">
-                  <span>18º</span>
-                  <span>27º</span>
-                  <span>Salvador</span>
-               </div>
-
-               <div className="capitals__capital">
-                  <span>18º</span>
-                  <span>27º</span>
-                  <span>Curitiba</span>
-               </div>
-
-               <div className="capitals__capital">
-                  <span>18º</span>
-                  <span>30º</span>
-                  <span>Fortaleza</span>
-               </div>
-
-               <div className="capitals__capital">
-                  <span>18º</span>
-                  <span>27º</span>
-                  <span>Manaus</span>
-               </div>
-
-               <div className="capitals__capital">
-                  <span>18º</span>
-                  <span>27º</span>
-                  <span>João Pessoa</span>
+               <div className="capitals__items">
+                  <div className="capitals__temp">
+                     <span>Min</span>
+                     <span>Máx</span>
+                     <span></span>
+                  </div>
+                  {arrDesktopRight && arrDesktopRight.map(city => (
+                     <CapitalDeskRight key={city.id} city={city} />
+                  ))}
                </div>
             </div>
-
-         </div>
+            </>
+         )}
       </div>
    );
 };
 
 export default CapitalsTemp;
+
+
+               

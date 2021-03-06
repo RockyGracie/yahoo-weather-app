@@ -1,4 +1,7 @@
-const CityInfo = () => {
+const CityInfo = ({ data }) => {
+
+   const { main, name, sys, weather, wind } = data;
+
    return (
       <div className="cityinfo">
          <h3 className="cityinfo__title pdd-left">
@@ -11,32 +14,32 @@ const CityInfo = () => {
                </button>
 
                <div className="cityinfo__city--name">
-                  Niterói, RJ - Brasil
+                  {name}, {sys.country}
                </div>
 
                <div className="cityinfo__city--temp">
-                  20ºC Nublado
+                  {Math.round(main.temp)}ºC {weather[0].description}
                </div>
 
                <div className="cityinfo__city--grid">
                   <div className="cityinfo__city--grid grid-info min-max">
                      <div className="cityinfo__city--grid min-max__min">
                         <i className="fas fa-arrow-up icon" />
-                        16º
+                        {Math.round(main.temp_min)}º
                      </div>
                      <div className="cityinfo__city--grid min-max__min">
                         <i className="fas fa-arrow-down icon" />
-                        25º
+                        {Math.round(main.temp_max)}º
                      </div>
                   </div>
                   <div className="cityinfo__city--grid grid-info sense">
-                     <span>Sensação</span> 19º
+                     <span>Sensação</span> {Math.round(main.feels_like)}º
                   </div>
                   <div className="cityinfo__city--grid grid-info wind">
-                     <span>Vento</span> 18km/h
+                     <span>Vento</span> {Math.round(wind.speed)}km/h
                   </div>
                   <div className="cityinfo__city--grid grid-info humidity">
-                     <span>Umidade</span> 89%
+                     <span>Umidade</span> {Math.round(main.humidity)}%
                   </div>
                </div>
             </div>
