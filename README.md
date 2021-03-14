@@ -1,6 +1,6 @@
 # Weather Forecast APP
 
-## Application that shows the temperature in some default cities and allows you to search for the complete weather of whenever city you want.
+## Application that shows the temperature in some default cities and allows you to search for the complete weather of any city you want.
 
 ### 🛠 Techs
 
